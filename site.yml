@@ -1,0 +1,10 @@
+---
+
+- name: Common tasks
+  hosts: all
+  user: centos
+  sudo : yes
+
+  roles:
+    - sfromm.epel
+  tasks:
