@@ -1,3 +1,6 @@
 [submodule "roles/epel"]
 	path = roles/epel
 	url = https://github.com/sfromm/ansible-epel
+[submodule "roles/nginx"]
+	path = roles/nginx
+	url = https://github.com/datadog-galaxy/nginx.git
