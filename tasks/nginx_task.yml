@@ -3,3 +3,10 @@
 - name: Copy default configuration
   template: src=templates/default_config.conf.j2 dest=/etc/nginx/sites-enabled.d/default.conf
   notify: restart nginx
+
+- name: Install packages
+  yum: name={{ item }} state=present
+  with_items: '{{ packages }}'
+
+- name: Start php-fpm
+  service: name=php-fpm state=started

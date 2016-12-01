@@ -14,3 +14,15 @@ http_params:
   - client_max_body_size 160m
   - server_names_hash_bucket_size 128
   - server_names_hash_max_size 750
+
+packages:
+    - php
+    - php-mysql
+    - php-fpm
+    - php-common
+    - php-cli
+    - php-devel
+    - php-fpm
+    - php-gd
+    - php-intl
+    - php-ldap
