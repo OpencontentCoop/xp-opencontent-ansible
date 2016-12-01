@@ -21,5 +21,6 @@
     - "group_vars/nginx.yml"
   roles:
     - nginx
+    - repo-remi
   tasks:
     - include: tasks/nginx_task.yml
