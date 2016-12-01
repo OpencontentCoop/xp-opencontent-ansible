@@ -1,0 +1,5 @@
+---
+
+- name: Copy default configuration
+  template: src=templates/default_config.conf.j2 dest=/etc/nginx/sites-enabled.d/default.conf
+  notify: restart nginx

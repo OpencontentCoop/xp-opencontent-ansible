@@ -7,8 +7,19 @@
   become_method: sudo
   vars_files:
     - "group_vars/all.yml"
-
   roles:
     - epel
   tasks:
     - include: tasks/global_task.yml
+
+- name: Nginx tasks
+  hosts: nginx
+  remote_user: centos
+  become: yes
+  become_method: sudo
+  vars_files:
+    - "group_vars/nginx.yml"
+  roles:
+    - nginx
+  tasks:
+    - include: tasks/nginx_task.yml
