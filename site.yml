@@ -2,9 +2,13 @@
 
 - name: Common tasks
   hosts: all
-  user: centos
-  sudo : yes
+  remote_user: centos
+  become: yes
+  become_method: sudo
+  vars_files:
+    - "group_vars/all.yml"
 
   roles:
-    - sfromm.epel
+    - epel
   tasks:
+    - include: tasks/global_task.yml
