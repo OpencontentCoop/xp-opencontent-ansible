@@ -4,3 +4,6 @@
 [submodule "roles/nginx"]
 	path = roles/nginx
 	url = https://github.com/datadog-galaxy/nginx.git
+[submodule "roles/repo-remi"]
+	path = roles/repo-remi
+	url = https://github.com/hostclick/remi_repo.git
