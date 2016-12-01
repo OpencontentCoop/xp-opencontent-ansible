@@ -1,0 +1,23 @@
+---
+
+- name: Install base packages
+  yum: name={{ item }} state=present
+  with_items: '{{ global_packages }}'
+
+- name: Add groups
+  group: name={{ item }} state=present
+  with_items: '{{ group_list }}'
+
+- name: Add users
+  user: name={{ item.name }} state=present groups={{ item.groups }} ssh_key_file=.ssh/id_rsa
+  with_items: '{{ user_list }}'
+
+- name: Authorized key installation
+  authorized_key: user={{ item.name }} key="{{ item.ssh_pub_key }}"
+  with_items: '{{ user_list }}'
+
+- name: Set selinux
+  selinux: policy=targeted state=permissive
+
+- name: Copy vimrc from local folder
+  copy: src=files/vimrc dest=/etc/vimrc
