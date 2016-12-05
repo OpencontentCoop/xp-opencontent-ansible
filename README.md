@@ -11,7 +11,11 @@ The role are included as submodule in the roles folder, to avoid to manage it wi
 # How to run playbook
 1. Change hosts file
 2. Install role dependency
-3. Run ansible
+3. Check ansible
 ```
-ansible-playbook -i hosts site.yml
+ansible-playbook -i dynamic_inventory/ec2.py --list-hosts --extra-vars "env=produzione" site.yml
+```
+4. Run ansible
+```
+ansible-playbook -i dynamic_inventory/ec2.py --extra-vars "env=produzione" site.yml
 ```
