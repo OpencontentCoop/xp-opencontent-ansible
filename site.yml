@@ -1,7 +1,8 @@
 ---
 
 - name: Common tasks
-  hosts: all
+  hosts:
+    - all:&tag_Environment_{{env}}
   remote_user: centos
   become: yes
   become_method: sudo
@@ -13,7 +14,7 @@
     - include: tasks/global_task.yml
 
 - name: Nginx tasks
-  hosts: tag_Role_nginx #used for dynamic inventory: ec2 with tag Role == nginx
+  hosts: tag_Role_nginx:&tag_Environment_{{env}} #used for dynamic inventory: ec2 with tag Role == nginx
   remote_user: centos
   become: yes
   become_method: sudo
