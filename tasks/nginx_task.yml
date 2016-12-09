@@ -1,12 +1,39 @@
 ---
 
+# NGINX section
+
+- name: Copy nginx.conf main config file
+  template: src=templates/nginx.conf.j2 dest=/etc/nginx/nginx.conf
+
+- name: Copy fastcgi_params
+  template: src=templates/fastcgi_params.j2 dest=/etc/nginx/fastcgi_params
+
 - name: Copy default configuration
   template: src=templates/default_config.conf.j2 dest=/etc/nginx/sites-enabled.d/default.conf
   notify: restart nginx
 
+# PHP section
+- name: Configure remi for php
+  copy: src=files/remi.repo dest=/etc/yum.repos.d/remi.repo
+
 - name: Install packages
   yum: name={{ item }} state=present
   with_items: '{{ packages }}'
+
+- name: Copy php.ini
+  copy: src=files/php.ini dest=/etc/php.ini
+
+- name: Copy www.conf
+  copy: src=files/www.conf dest=/etc/php-fpm.d/www.conf
+
+- name: Copy php suhosin config
+  copy: src=files/suhosin.ini dest=/etc/php.d/40-suhosin.ini
+
+- name: Copy php opcache config
+  copy: src=files/opcache.ini dest=/etc/php.d/10-opcache.ini
+
+- name: Copy opcache-ezcache.blacklist
+  copy: src=files/opcache-ezcache.blacklist dest=/etc/php.d/opcache-ezcache.blacklist
 
 - name: Start php-fpm
   service: name=php-fpm state=started
