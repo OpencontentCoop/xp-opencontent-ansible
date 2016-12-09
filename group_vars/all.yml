@@ -22,6 +22,8 @@ global_packages:
     - hunspell
     - hunspell-en
     - hunspell-it
+    - net-tools
+    - nano
 
 group_list:
   - users
