@@ -1,0 +1,11 @@
+---
+
+- name: Install default varnish
+  yum: name=varnish state=present
+
+- name: Configure varnish
+  template: src=templates/varnish.params.j2 dest=/etc/varnish/varnish.params
+
+- name: Configure Nginx Reverse Proxy
+  template: src=templates/nginx.reverseproxy.j2 dest=/etc/nginx/nginx.conf
+  notify: restart nginx

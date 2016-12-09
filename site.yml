@@ -36,3 +36,15 @@
   roles:
     - java-oracle
     - solr
+
+- name: Varnish tasks
+  hosts: tag_Role_varnish:&tag_Environment_{{env}}
+  remote_user: centos
+  become: yes
+  become_method: sudo
+  vars_files:
+    - "group_vars/varnish.yml"
+  roles:
+    - nginx
+  tasks:
+    - include: tasks/varnish_task.yml
