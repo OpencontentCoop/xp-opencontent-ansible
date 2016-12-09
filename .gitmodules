@@ -10,3 +10,6 @@
 [submodule "roles/java-oracle"]
 	path = roles/java-oracle
 	url = https://github.com/William-Yeh/ansible-oracle-java.git
+[submodule "roles/solr"]
+	path = roles/solr
+	url = https://github.com/geerlingguy/ansible-role-solr.git
