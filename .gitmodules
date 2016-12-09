@@ -7,3 +7,6 @@
 [submodule "roles/repo-remi"]
 	path = roles/repo-remi
 	url = https://github.com/hostclick/remi_repo.git
+[submodule "roles/java-oracle"]
+	path = roles/java-oracle
+	url = https://github.com/William-Yeh/ansible-oracle-java.git

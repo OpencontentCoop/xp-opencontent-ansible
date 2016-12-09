@@ -25,3 +25,14 @@
     - repo-remi
   tasks:
     - include: tasks/nginx_task.yml
+
+- name: Solr tasks
+  hosts: tag_Role_solr:&tag_Environment_{{env}}
+  remote_user: centos
+  become: yes
+  become_method: sudo
+  vars_files:
+    - "group_vars/solr.yml"
+  roles:
+    - java-oracle
+    - solr
