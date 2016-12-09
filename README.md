@@ -7,6 +7,8 @@ The role are included as submodule in the roles folder, to avoid to manage it wi
 * [epel](https://galaxy.ansible.com/sfromm/epel/)
 * [nginx](https://github.com/datadog-galaxy/nginx.git)
 * [repo-remi](https://github.com/hostclick/remi_repo.git)
+* [solr](https://github.com/geerlingguy/ansible-role-solr.git)
+* [java-oracle](https://github.com/William-Yeh/ansible-oracle-java.git)
 
 # How to run playbook
 1. Change hosts file
