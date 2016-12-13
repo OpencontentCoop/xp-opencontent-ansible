@@ -17,7 +17,12 @@ The role are included as submodule in the roles folder, to avoid to manage it wi
 ```
 ansible-playbook -i dynamic_inventory/ec2.py --list-hosts --extra-vars "env=produzione" site.yml
 ```
-4. Run ansible
+4. If ec2.ini is locatend in another folder than the ec2.py script export the path:
+```
+export EC2_INI_PATH=/path/to/custom/ini/ec2.ini
+```
+
+Run ansible
 ```
 ansible-playbook -i dynamic_inventory/ec2.py --extra-vars "env=produzione" site.yml
 ```
