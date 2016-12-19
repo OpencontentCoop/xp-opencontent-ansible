@@ -1,6 +1,6 @@
 ---
 - name: restart varnish
-  service: name=varnish state=restart
+  service: name=varnish state=restarted
 
 - name: reload varnish
-  service: name=varnish state=reload
+  service: name=varnish state=reloaded

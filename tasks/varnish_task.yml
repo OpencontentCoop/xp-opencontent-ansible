@@ -8,4 +8,6 @@
 
 - name: Configure Nginx Reverse Proxy
   template: src=templates/nginx.reverseproxy.j2 dest=/etc/nginx/nginx.conf
-  notify: restart nginx
+  notify:
+    - restart nginx
+    - restart varnish

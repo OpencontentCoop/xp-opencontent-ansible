@@ -42,6 +42,8 @@
   remote_user: centos
   become: yes
   become_method: sudo
+  handlers:
+    - include: handlers/main.yml
   vars_files:
     - "group_vars/varnish.yml"
   roles:
