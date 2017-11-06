@@ -17,7 +17,7 @@
   copy: src=files/remi.repo dest=/etc/yum.repos.d/remi.repo
 
 - name: Install packages
-  yum: name={{ item }} state=present
+  yum: name={{ item }} state=present update_cache=yes
   with_items: '{{ packages }}'
 
 - name: Copy php.ini
