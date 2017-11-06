@@ -38,6 +38,6 @@ packages:
   - php-xml
   - xpdf
   - ImageMagick
-  - ImageMagick-last-libs
+ # - ImageMagick-last-libs
   - bzip2-libs
   - yum-utils
