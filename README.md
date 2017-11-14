@@ -31,3 +31,5 @@ Run ansible staging:
 ```
 ansible-playbook -i dynamic_inventory/ec2.py --extra-vars "env=staging" --private-key ~/keys/opencontent/EU-XPeppers-collaudo.pem site.yml
 ```
+
+
