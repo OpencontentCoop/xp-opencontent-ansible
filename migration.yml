@@ -1,0 +1,11 @@
+---
+
+- name: Common tasks
+  hosts: migration
+  remote_user: centos
+  become: yes
+  become_method: sudo
+  vars_files:
+    - "group_vars/migration.yml"
+  tasks:
+    - include: tasks/migration.yml
