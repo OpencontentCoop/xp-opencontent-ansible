@@ -13,3 +13,6 @@
 [submodule "roles/solr"]
 	path = roles/solr
 	url = https://github.com/geerlingguy/ansible-role-solr.git
+[submodule "roles/ansible-role-aws-tools"]
+	path = roles/ansible-role-aws-tools
+	url = https://github.com/xpeppers/ansible-role-aws-tools.git

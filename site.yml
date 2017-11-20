@@ -23,6 +23,7 @@
   roles:
     - nginx
     - repo-remi
+    - ansible-role-aws-tools
   tasks:
     - include: tasks/nginx_task.yml
 
@@ -35,6 +36,7 @@
     - "group_vars/solr.yml"
   roles:
     - java-oracle
+    - ansible-role-aws-tools
     - solr
 
 - name: Varnish tasks
@@ -47,6 +49,7 @@
   vars_files:
     - "group_vars/varnish.yml"
   roles:
+    - ansible-role-aws-tools
     - nginx
   tasks:
     - include: tasks/varnish_task.yml
