@@ -53,3 +53,13 @@
     - nginx
   tasks:
     - include: tasks/varnish_task.yml
+
+- name: General Silver Image
+  hosts: silver_image
+  remote_user: centos
+  become: yes
+  become_method: sudo
+  roles:
+    - ansible-role-aws-tools
+  tasks:
+    - include: tasks/silver_image_task.yml

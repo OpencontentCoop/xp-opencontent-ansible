@@ -1,0 +1,23 @@
+---
+
+- name: Install base packages
+  yum: name={{ item }} state=present
+  with_items:
+    - bind-utils
+    - bzip2
+    - git
+    - htop
+    - iftop
+    - net-tools
+    - python-pip
+    - rsync
+    - tar
+    - unzip
+    - vim
+    - wget
+    - zip
+
+- name: Install pip packages
+  pip: name={{ item }} state=present
+  with_items:
+    - aws-ec2-assign-elastic-ip
